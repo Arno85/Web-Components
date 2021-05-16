@@ -10,15 +10,22 @@
     <script src="confirm-link/confirm-link.js"></script>
     <script src="toggle-button/toggle-button.js"></script>
     <style>
-        div {
-            border: 3px solid orange;
+        :root {
+            --color-primary: #a4e7fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
         }
     </style>
 </head>
 
 <body>
     <p>
-        <am-tooltip text="Web components is a set of standards">Web Components</am-tooltip> are awesome!
+        <am-tooltip class="important" text="Web components is a set of standards">
+            <span class="highlight">Web Components</span>
+        </am-tooltip> are awesome!
     </p>
     <p>
         <am-tooltip></am-tooltip>
