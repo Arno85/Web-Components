@@ -9,6 +9,7 @@
     <script src="tooltip/tooltip.js"></script>
     <script src="confirm-link/confirm-link.js"></script>
     <script src="toggle-button/toggle-button.js"></script>
+    <script src="modal/modal.js"></script>
     <style>
         :root {
             --color-primary: #a4e7fc;
@@ -36,6 +37,30 @@
     <am-toggle-button>
         <p id="info-box">More infos!</p>
     </am-toggle-button>
+    <hr />
+    <am-modal>
+        <h1 slot="title">Please Confirm!</h1>
+        <p>With you confirmin you agree to pay the full amount</p>
+    </am-modal>
+    <p>Please confirm your choice.</p>
+    <button id="confirm-button">Show details & confirm</button>
+    <script>
+        const confirmButton = document.querySelector('#confirm-button');
+        const modal = document.querySelector('am-modal');
+        console.dir(modal);
+
+        modal.addEventListener('confirm', () => {
+            console.log('Confirmed');
+        });
+
+        modal.addEventListener('cancel', () => {
+            console.log('Cancelled');
+        });
+
+        confirmButton.addEventListener('click', () => {
+            modal.open();
+        });
+    </script>
 </body>
 
 </html>
