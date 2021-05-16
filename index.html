@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components</title>
+    <script src="tooltip/tooltip.js"></script>
+    <script src="confirm-link/confirm-link.js"></script>
+    <script src="toggle-button/toggle-button.js"></script>
+    <style>
+        div {
+            border: 3px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <am-tooltip text="Web components is a set of standards">Web Components</am-tooltip> are awesome!
+    </p>
+    <p>
+        <am-tooltip></am-tooltip>
+    </p>
+    <hr />
+    <a is="am-confirm-link" href="http://google.com">Google</a>
+    <hr />
+    <am-toggle-button>
+        <p id="info-box">More infos!</p>
+    </am-toggle-button>
+</body>
+
+</html>
