@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/web-component-stencil.esm.js"></script>
+  <script nomodule src="/build/web-component-stencil.js"></script>
+  <style>
+    :root {
+      --primary-color-base: darkcyan;
+      --primary-color-accent: white;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .side-nav {
+      list-style: none;
+    }
+
+    .side-nav li {
+      margin: 1rem 0;
+    }
+
+    .side-nav a {
+      text-decoration: none;
+      color: var(--primary-color-base);
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="side-drawer-btn">Open Side Menu</button>
+  <am-side-drawer title="Main Menu">
+    <ul class="side-nav">
+      <li><a href="/">A Link</a></li>
+      <li><a href="/">Another Link</a></li>
+    </ul>
+  </am-side-drawer>
+
+  <p>
+    <am-tooltip text="Stencil is a tool to create Web Components">Learn about Stencil</am-tooltip>
+  </p>
+
+  <script>
+    const sideDrawerBtn = document.querySelector('#side-drawer-btn');
+    const sideDrawer = document.querySelector('am-side-drawer');
+    sideDrawerBtn.addEventListener('click', () => {
+      if (!sideDrawer.opened) {
+        sideDrawer.open();
+      }
+
+    });
+  </script>
+</body>
+
+</html>
