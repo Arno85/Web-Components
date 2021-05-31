@@ -12,6 +12,9 @@
     :root {
       --primary-color-base: darkcyan;
       --primary-color-accent: white;
+      --color-primary: #3b013b;
+      --color-primary-accent: rgb(226, 226, 226);
+      --color-primary-lighten: #750175;
     }
 
     body {
@@ -47,6 +50,8 @@
     <am-tooltip text="Stencil is a tool to create Web Components">Learn about Stencil</am-tooltip>
   </p>
 
+  <am-stock-price stock-symbol="AAPL"></am-stock-price>
+  <am-stock-finder></am-stock-finder>
   <script>
     const sideDrawerBtn = document.querySelector('#side-drawer-btn');
     const sideDrawer = document.querySelector('am-side-drawer');
@@ -55,6 +60,11 @@
         sideDrawer.open();
       }
 
+    });
+
+    const stockFinderEl = document.querySelector('am-stock-finder');
+    stockFinderEl.addEventListener('amSymbolSelected', (event) => {
+      // console.log(event);
     });
   </script>
 </body>
