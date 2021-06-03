@@ -7,13 +7,13 @@ import { Component, h, Method, Prop, State } from '@stencil/core';
 })
 export class SideDrawer {
 	@Prop({ reflect: true })
-	title: string;
+	drawerTitle: string;
 	@Prop({ reflect: true, mutable: true })
 	opened: boolean;
 	@State() showContact = false;
 
 	@Method()
-	open() {
+	async open() {
 		this.opened = true;
 	}
 
@@ -47,7 +47,7 @@ export class SideDrawer {
 			<div class="backdrop" onClick={this.close.bind(this)} />,
 			<aside>
 				<header>
-					<h1>{this.title}</h1>
+					<h1>{this.drawerTitle}</h1>
 					<button onClick={this.close.bind(this)}>x</button>
 				</header>
 				<section class="tabs">
